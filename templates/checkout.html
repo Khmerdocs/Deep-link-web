@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Add to Cart Interaction Example</title>
+  <!-- <link rel="stylesheet" href="../css/style.css"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script type="module" src="https://unpkg.com/b24-payment-sdk"></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+<div id="wrapper">
+
+<div id="info">
+<p>  
+</div>
+
+<div id="header">	
+	<ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">BRANDS</a></li>
+        <li><a href="">DESIGNERS</a></li>
+        <li><a href="">CONTACT</a></li>                                              
+    </ul>		
+</div>
+
+<!-- <div id="checkout" style="width: 100%;height: auto;">
+    B24PaymentSdk.intSdk({
+        tranId: "{{ tran_id }}",
+        refererKey: "2024FYI",
+        language: "km",
+        darkMode: false,
+        isProduction: false,
+        isPopup: true
+    });
+</div> -->
+
+    <!--start script -->
+    <script>
+        window.onload = function() {
+            B24PaymentSdk.init({
+                tranId: '{{ tran_id }}',
+                refererKey: "2024FYI",
+                language: "km",
+                darkMode: false,
+                isProduction: false,
+                isPopup: true
+        });
+    }
+    </script>
+
+<!-- Print all values for verification -->
+<script>
+    console.log("tranId:", '{{ tran_id }}');
+    console.log("refererKey:", "2024FYI");
+    console.log("language:", "km");
+    console.log("darkMode:", false);
+    console.log("isProduction:", false);
+    console.log("isPopup:", true);
+</script>
+
+
+
+
